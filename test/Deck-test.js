@@ -18,9 +18,9 @@ describe('Deck', function() {
     expect(fullDeck).to.be.an.instanceof(Deck);
   });
   it('should take in cards and store them in a deck', () => {
-    expect(fullDeck.deck[0]).to.equal(card1);
-    expect(fullDeck.deck[1]).to.equal(card2);
-    expect(fullDeck.deck[2]).to.equal(card3);
+    expect(fullDeck.cards[0]).to.equal(card1);
+    expect(fullDeck.cards[1]).to.equal(card2);
+    expect(fullDeck.cards[2]).to.equal(card3);
   });
   it('should be able to tell you the number of cards in the deck', () => {
     expect(fullDeck.countCards()).to.equal(3);

@@ -8,16 +8,16 @@ describe('Turn', function() {
   const turn = new Turn('object', card);
   const wrongTurn = new Turn('array', card);
 
-//   beforeEach( () => {
-//   turn = new Turn('object', card);
-//   wrongTurn = new Turn('array', card);
-// });
   it('should be a function', () => {
     expect(Turn).to.be.a('function');
   });
   it('should be an instance of Turn', () => {
     expect(turn).to.be.an.instanceof(Turn);
   });
+  it('should be able to have a guess and a card', () => {
+    expect(turn.guess).to.equal('object')
+    expect(turn.card).to.equal(card)
+  })
   it('should be able to return your guess', () => {
     expect(turn.returnGuess()).to.equal('object');
   });

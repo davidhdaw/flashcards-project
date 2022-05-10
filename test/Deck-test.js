@@ -9,6 +9,7 @@ describe('Deck', function() {
   const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
   const fullDeck = new Deck([card1, card2, card3]);
   const shortDeck = new Deck([card1, card2]);
+  const cardArray = [card1, card2, card3];
 
   it('should be a function', () => {
     expect(Deck).to.be.a('function');
@@ -17,10 +18,12 @@ describe('Deck', function() {
     expect(fullDeck).to.be.an.instanceof(Deck);
   });
   it('should take in cards and store them in a deck', () => {
-    expect(fullDeck.deck).to.equal('[card1, card2, card3]')
+    expect(fullDeck.deck[0]).to.equal(card1);
+    expect(fullDeck.deck[1]).to.equal(card2);
+    expect(fullDeck.deck[2]).to.equal(card3);
   });
   it('should be able to tell you the number of cards in the deck', () => {
-    expect(fullDeck.countCards).to.equal(3);
-    expect(shortDeck.countCards).to.equal(2);
+    expect(fullDeck.countCards()).to.equal(3);
+    expect(shortDeck.countCards()).to.equal(2);
   });
 });
